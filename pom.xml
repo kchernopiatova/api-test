@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.solvd</groupId>
+    <artifactId>api-test</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <carinaversion>7.2.14</carinaversion>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.qaprosoft</groupId>
+            <artifactId>carina-api</artifactId>
+            <version>${carinaversion}</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <release>${java.version}</release>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.0.0-M5</version>
+                <configuration>
+                    <groups>selects</groups>
+                    <suiteXmlFiles>
+                        <suiteXmlFile>src/test/resources/testngsuites/SubwayTestSuite.xml</suiteXmlFile>
+                    </suiteXmlFiles>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
